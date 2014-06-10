@@ -1,0 +1,10 @@
+# Site settings
+title: zimulala Blog
+email: zimuxia@sina.cn
+description: "To be .,."
+baseurl: ""
+url: "http://zimulala.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty

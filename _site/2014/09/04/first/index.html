@@ -61,19 +61,19 @@
 
   <article class="post-content">
   <p> 今天发现了个ubuntu下网线插到主机上插口不亮<br />
- 具体问题描述：台式机，网口变了（由于公司换工位），windows下可以用有线；ubuntu下，有线连接显示线缆已拔出<br />
+ <strong>具体问题描述</strong>：台式机，网口变了（由于公司换工位），windows下可以用有线；ubuntu下，有线连接显示线缆已拔出<br />
  很多同时发生类似问题，搜索了下，有说是移动了ip的原因（这个没有具体证实）；有说是mac地址缓存住了（这个试着清了，没有用）。<br />
- 解决方法：sudo ethtool -s eth2 autoneg off speed 100 duplex full <br />
+ <strong>解决方法</strong>：sudo ethtool -s eth2 autoneg off speed 100 duplex full <br />
  修改前后的区别有<br />
                 修改前        修改后<br />
- Advertised auto-negotiation    Yes          No <br />
- auto-negotiation           on          off<br />
- Duplex               Hlaf         Full<br />
- Link detected           no           yes <br />
- 此指令将eth2（我用的是这个，可以用ifconfig查看对应网络接口）设备设置为全双工自适应，速度为100Mbs，自动协商关闭。<br />
+ <em>Advertised auto-negotiation</em>    Yes          No <br />
+ <em>auto-negotiation</em>           on          off<br />
+ <em>Duplex</em>               Hlaf         Full<br />
+ <em>Link detected</em>           no           yes <br />
+ <strong>指令说明</strong>：此指令将eth2（我用的是这个，可以用ifconfig查看对应网络接口）设备设置为全双工自适应，速度为100Mbs，自动协商关闭。<br />
 不过此指令是重启会失效。可以通过如下方法永久有效：<br />
- 1、若要eth0启动时设置这些参数, 修改文件/etc/sysconfig/network-scripts/ifcfg-eth0，添加如下一行:ETHTOOL_OPTS=”speed 100 duplex full autoneg off”<br />
- 2、将ethtool设置写入/etc/rc.d/rc.local之中。  </p>
+ 1.若要eth0启动时设置这些参数, 修改文件/etc/sysconfig/network-scripts/ifcfg-eth0，添加如下一行:ETHTOOL_OPTS=”speed 100 duplex full autoneg off”<br />
+ 2.将ethtool设置写入/etc/rc.d/rc.local之中。  </p>
 
   </article>
 

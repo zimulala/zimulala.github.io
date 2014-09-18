@@ -9,19 +9,19 @@
       <item>
         <title>ubuntu下有线连接显示线缆已拔出</title>
         <description>&lt;p&gt; 今天发现了个ubuntu下网线插到主机上插口不亮&lt;br /&gt;
- 具体问题描述：台式机，网口变了（由于公司换工位），windows下可以用有线；ubuntu下，有线连接显示线缆已拔出&lt;br /&gt;
+ &lt;strong&gt;具体问题描述&lt;/strong&gt;：台式机，网口变了（由于公司换工位），windows下可以用有线；ubuntu下，有线连接显示线缆已拔出&lt;br /&gt;
  很多同时发生类似问题，搜索了下，有说是移动了ip的原因（这个没有具体证实）；有说是mac地址缓存住了（这个试着清了，没有用）。&lt;br /&gt;
- 解决方法：sudo ethtool -s eth2 autoneg off speed 100 duplex full &lt;br /&gt;
+ &lt;strong&gt;解决方法&lt;/strong&gt;：sudo ethtool -s eth2 autoneg off speed 100 duplex full &lt;br /&gt;
  修改前后的区别有&lt;br /&gt;
                 修改前        修改后&lt;br /&gt;
- Advertised auto-negotiation    Yes          No &lt;br /&gt;
- auto-negotiation           on          off&lt;br /&gt;
- Duplex               Hlaf         Full&lt;br /&gt;
- Link detected           no           yes &lt;br /&gt;
- 此指令将eth2（我用的是这个，可以用ifconfig查看对应网络接口）设备设置为全双工自适应，速度为100Mbs，自动协商关闭。&lt;br /&gt;
+ &lt;em&gt;Advertised auto-negotiation&lt;/em&gt;    Yes          No &lt;br /&gt;
+ &lt;em&gt;auto-negotiation&lt;/em&gt;           on          off&lt;br /&gt;
+ &lt;em&gt;Duplex&lt;/em&gt;               Hlaf         Full&lt;br /&gt;
+ &lt;em&gt;Link detected&lt;/em&gt;           no           yes &lt;br /&gt;
+ &lt;strong&gt;指令说明&lt;/strong&gt;：此指令将eth2（我用的是这个，可以用ifconfig查看对应网络接口）设备设置为全双工自适应，速度为100Mbs，自动协商关闭。&lt;br /&gt;
 不过此指令是重启会失效。可以通过如下方法永久有效：&lt;br /&gt;
- 1、若要eth0启动时设置这些参数, 修改文件/etc/sysconfig/network-scripts/ifcfg-eth0，添加如下一行:ETHTOOL_OPTS=”speed 100 duplex full autoneg off”&lt;br /&gt;
- 2、将ethtool设置写入/etc/rc.d/rc.local之中。  &lt;/p&gt;
+ 1.若要eth0启动时设置这些参数, 修改文件/etc/sysconfig/network-scripts/ifcfg-eth0，添加如下一行:ETHTOOL_OPTS=”speed 100 duplex full autoneg off”&lt;br /&gt;
+ 2.将ethtool设置写入/etc/rc.d/rc.local之中。  &lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Sep 2014 00:00:00 +0800</pubDate>
         <link>http://zimulala.github.io/2014/09/04/first/</link>

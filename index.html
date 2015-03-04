@@ -33,13 +33,14 @@
         </div>
         <span class="blc"></span><span class="trc"></span>
         </div>
-        <article class="markdown-body">
-          <h1>
-<a id="zimulala-blog" class="anchor" href="#zimulala-blog" aria-hidden="true"><span class="octicon octicon-link"></span></a>zimulala blog</h1>
-
-<p>--blog test1:<a href="http://zimulala.github.io">http://zimulala.github.io</a><br>
---blog test2:<a href="http://zimulala.github.io/jekyll_demo">http://zimulala.github.io/jekyll_demo</a></p>
-        </article>
+         <ul class="posts">
+           {% for post in site.posts %}
+              <li>
+              <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </li>
+           {% endfor %}
+          </ul>
       </div>
     </div>
     <footer>

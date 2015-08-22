@@ -5,6 +5,19 @@ description: "To be or not to be ..."
 baseurl: ""
 url: "http://zimulala.github.io"
 
+<div class="sidenav">
+		<h2>分类</h2>
+		<ul class="artical-list">
+			{% for category in page.categories %}
+				{% for post in site.categories[category] limit: 7 %}
+				{% unless post.id == page.id %}
+					<li><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></li>
+				{% endunless %}
+				{% endfor %}
+			{% endfor %}
+		</ul>
+	</div>
+
 # Build settings
 markdown: kramdown
 permalink: pretty

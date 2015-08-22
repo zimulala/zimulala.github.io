@@ -11,9 +11,7 @@
       <div class="wrap">
       {{ content }}
       </div>
-    </div>
-    
-    <div class="sidenav">
+      <div class="sidenav">
 		<h2>Related Blog</h2>
 		<ul class="artical-list">
 			{% for category in page.categories %}
@@ -25,6 +23,7 @@
 			{% endfor %}
 		</ul>
 	　</div>
+    </div>
 
     {% include footer.html %}
 

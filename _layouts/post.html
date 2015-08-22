@@ -13,8 +13,8 @@ layout: default
   </article>
 
 <div class="sidenav">
-			<h2>Related Blog</h2>
-			<ul class="artical-list">
+		<h2>Related Blog</h2>
+		<ul class="artical-list">
 			{% for category in page.categories %}
 				{% for post in site.categories[category] limit: 7 %}
 				{% unless post.id == page.id %}
@@ -22,7 +22,7 @@ layout: default
 				{% endunless %}
 				{% endfor %}
 			{% endfor %}
-			</ul>
+		</ul>
 	</div>
 		
  <div id="disqus_thread"></div>

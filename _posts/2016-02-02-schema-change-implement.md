@@ -40,7 +40,7 @@ title: TiDB 的异步 schema 变更实现
 #### 基本流程
   本小节描述的是异步 DDL 变更的整体流程，忽略实现细节。假设系统中只有两个节点，TiDB Server 1 和 TiDB Server 2。其中 TiDB Server 1 是 DDL 操作的接收节点， TiDB Server 2 是 owner。如下图 2 展示的是在 TiDB Server 1 中涉及的流程，图 3 展示的是在 TiDB Server 2 中涉及的流程。
 
-![图2 TiDB Server 1流程图](https://zimulala.github.io/images/schame_2.jpg)
+![图2 TiDB Server 1流程图](https://github.com/zimulala/zimulala.github.io/blob/zimuxia/update-images/images/schema_1.jpg)
 
 图 2 TiDB Server 1 流程图
 
@@ -58,7 +58,7 @@ title: TiDB 的异步 schema 变更实现
 #### 详细流程
   本小节以在 Table 中添加 column 为例详细介绍 worker 处理 job 的整个流程，具体流程如图 4 。考虑到与前面章节的连续性，图 4 可以理解为是图 2 和图 3 的展开描绘。
 
-![图4 add column 流程图](images/schema_4.jpg)
+![图4 add column 流程图](http://zimulala.github.io/asserts/schame_4.jpg)
 
 图 4 add column 流程图
 

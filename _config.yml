@@ -2,7 +2,7 @@
 title: zimulala Blog
 email: zimu_xia@126.com
 description: "To be or not to be ..."
-baseurl: ""
+baseurl: "http://zimulala.github.io"
 url: "http://zimulala.github.io"
 
 category-list: [golang, linux]

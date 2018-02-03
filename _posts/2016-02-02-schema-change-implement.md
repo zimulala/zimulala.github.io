@@ -58,7 +58,7 @@ title: TiDB 的异步 schema 变更实现
 #### 详细流程
   本小节以在 Table 中添加 column 为例详细介绍 worker 处理 job 的整个流程，具体流程如图 4 。考虑到与前面章节的连续性，图 4 可以理解为是图 2 和图 3 的展开描绘。
 
-![图4 add column 流程图](/asserts/schema_4.jpg)
+![图4 add column 流程图](/images/schema_5.jpg)
 
 图 4 add column 流程图
 

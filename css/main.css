@@ -352,25 +352,35 @@ a:visited { color: #205caa; }
   .site-nav {
     position: fixed;
     z-index: 10;
-    top: 14px; right: 8px;
+    top: 14px;
+    right: 8px;
     background-color: white;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     border: 1px solid #e8e8e8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional shadow for a subtle effect */
   }
 
   .site-nav .menu-icon {
-    display: block;
-    font-size: 24px;
-    color: #505050;
-    float: right;
+    display: flex;
+    justify-content: center;  /* Ensures icon is centered horizontally */
+    align-items: center;      /* Ensures icon is centered vertically */
     width: 36px;
-    text-align: center;
-    line-height: 36px;
+    height: 36px;
+    background-color: #f8f8f8; /* Optional: gives a background to the button */
+    border-radius: 5px;        /* Keeps the round corners */
+    cursor: pointer;           /* Indicates it's clickable */
   }
 
-  .site-nav .menu-icon svg { width: 18px; height: 16px; }
+  .site-nav .menu-icon svg {
+    width: 20px;  /* Adjust width to make icon a bit larger */
+    height: 20px; /* Adjust height to make icon a bit larger */
+    fill: #505050; /* Ensures the icon's color matches the desired theme */
+  }
+
+  /* Optional hover effect */
+  .site-nav .menu-icon:hover {
+    background-color: #e0e0e0;
+  }
 
   .site-nav .trigger {
     clear: both;

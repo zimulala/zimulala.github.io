@@ -406,10 +406,29 @@ a:visited { color: #205caa; }
   .post-content ul,
   .post-content ol { padding-left: 10px; }
 
-  .site-footer .column {
-    float: none;
-    clear: both;
-    width: auto;
-    margin: 0 0 15px; }
+  /* Footer Section */
+  .footer-col-2 .icon {
+    display: inline-block;  /* Ensures the icon behaves like an inline element */
+    width: 24px;            /* Set width to match GitHub/Twitter icon size */
+    height: 24px;           /* Set height to match GitHub/Twitter icon size */
+  }
+
+  .footer-col-2 .icon svg {
+    width: 100%;            /* Ensure SVG scales within its container */
+    height: 100%;           /* Ensure SVG scales within its container */
+  }
+
+  .footer-col-2 .icon.github svg {
+    fill: #C2C2C2;  /* GitHub icon color */
+  }
+
+  .footer-col-2 .icon.twitter svg {
+    fill: #C2C2C2;  /* Twitter icon color */
+  }
+
+  /* Optional: Add hover effect for better interactivity */
+  .footer-col-2 .icon:hover {
+    opacity: 0.8;  /* Slight transparency when hovered */
+  }
 
 }

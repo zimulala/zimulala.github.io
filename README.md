@@ -1,5 +1,7 @@
 zimulala blog
 ==================
 
---blog test1:http://zimulala.github.io  
---blog test2:http://zimulala.github.io/jekyll_demo
+Welcome to my personal blog!
+
+This blog is built using the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+

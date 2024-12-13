@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
+---
+---
 
-  {% include head.html %}
+<!doctype html>
+{% include copyright.html %}
+<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-    <body>
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached masthead.html %}
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrap">
+    <div class="initial-content">
       {{ content }}
-      </div>
-      <div class="site-nav">
-	<h2>Related Blog</h2>
-		{% for category in page.categories %}
-			{% for post in site.categories[category] limit: 7 %}
-			{% unless post.id == page.id %}
-				<li><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></li>
-			{% endunless %}
-			{% endfor %}
-		{% endfor %}
-      </div>
+      {% include after-content.html %}
     </div>
 
-    {% include footer.html %}
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
 
-    </body>
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+  </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: article
 title: TiDB 原理与实战
 ---
 

@@ -1,4 +1,5 @@
 # source "https://rubygems.org"
+# Uncomment the line below if you want to use Ruby China as the gem source
 source "https://gems.ruby-china.com"
 
 gem "jekyll", "3.9.2"

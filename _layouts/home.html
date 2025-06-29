@@ -9,7 +9,7 @@ layout: archive
 {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}
-  {% assign posts = site.posts %}
+  {% assign posts = site.posts | limit: 10 %}
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
@@ -17,4 +17,6 @@ layout: archive
   {% include documents-collection.html entries=posts type=entries_layout %}
 </div>
 
-{% include paginator.html %}
+{% if paginator.total_pages > 1 %}
+  {% include paginator.html %}
+{% endif %}

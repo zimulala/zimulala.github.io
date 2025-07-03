@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: single
 title: TiDB 的异步 schema 变更实现
 ---
 

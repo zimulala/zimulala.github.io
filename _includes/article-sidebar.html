@@ -1,0 +1,38 @@
+{% if page.toc or page.author_profile %}
+<div class="sidebar sticky">
+    <!-- Author information (displayed only on article page) -->
+    {% if page.author_profile or layout.author_profile %}
+    {% include author-profile.html %}
+    {% endif %}
+
+    <!-- Article contents -->
+    {% if page.toc %}
+    <div class="toc-wrapper">
+        <h3>目录</h3>
+        {% include toc.html sanitize=true html=content h_min=2 h_max=3 %}
+    </div>
+    {% endif %}
+
+    <!-- Customize sidebar content -->
+    {% if page.sidebar %}
+    {% for s in page.sidebar %}
+    {% if s.image %}
+    <img src="{{ s.image | relative_url }}"
+         alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}"
+         class="sidebar-image">
+    {% endif %}
+    {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+    {% if s.text %}{{ s.text | markdownify }}{% endif %}
+    {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <!-- Related articles recommendations -->
+    {% if page.id and page.related %}
+    <div class="related-posts">
+        <h3>相关文章</h3>
+        {% include page__related.html posts=site.related_posts %}
+    </div>
+    {% endif %}
+</div>
+{% endif %}

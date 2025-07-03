@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: single 
 title: Golang 中的 OpenTelemetry 快速入门
 category: golang
 ---

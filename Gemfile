@@ -1,10 +1,10 @@
-source "https://rubygems.org"
+# source "https://rubygems.org"
 # Local test
-# source "https://gems.ruby-china.com"
-# gem "minimal-mistakes-jekyll"
+source "https://gems.ruby-china.com"
+gem "minimal-mistakes-jekyll"
+# gem "jekyll-remote-theme"
 
 gem "jekyll", "3.9.2"
-gem "jekyll-remote-theme"
 gem "github-pages", "~> 227", group: :jekyll_plugins
 
 gem "webrick"
